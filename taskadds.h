@@ -40,6 +40,10 @@ struct TaskResult
     int exitCode;
     QByteArray error;
     QByteArray output;
+    bool status()
+    {
+        return (exitCode == 0);
+    };
 };
 TaskResult runTask(const QString cmd, const bool useSuid = true);
 
